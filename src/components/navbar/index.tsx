@@ -15,7 +15,10 @@ const NavbarComponent = () => {
         </span>
         {menu.map((item, index) => (
           <ul key={index} className="menu-item">
-            <Link style={{ textDecoration: 'none' }} to={`/${item.id}`}>
+            <Link
+              style={{ textDecoration: 'none' }}
+              to={index === 0 ? '/' : `/${item.id}`}
+            >
               <li
                 className={selectedId === index ? 'selected' : ''}
                 onClick={() => setSelectedId(index)}

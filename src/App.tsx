@@ -8,7 +8,7 @@ function App() {
     <div className="app">
       <NavbarComponent />
       <Routes>
-        <Route element={<TokensComponent />} path="/tokens" />
+        <Route element={<TokensComponent />} path="/" caseSensitive={true} />
         <Route element={<SearchComponent />} path="/search" />
       </Routes>
     </div>
