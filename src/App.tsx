@@ -1,23 +1,16 @@
-import React, { useState } from 'react'
-import { tokens, categories } from './tokens'
-import { menu } from './menu'
-import './App.css'
+import SearchComponent from 'components/mainpage/search'
+import TokensComponent from 'components/mainpage/tokens'
+import { Route, Routes } from 'react-router-dom'
+import NavbarComponent from './components/navbar'
 
 function App() {
-  const [category, setCategory] = useState(categories[0])
-
   return (
     <div className="app">
-      <div className="menu">
-        {menu.map((item) => (
-          <div className="menu-item">{item.title}</div>
-        ))}
-      </div>
-      <div className="tokens">
-        {tokens.map((item) => (
-          <div className="token">{item.name}</div>
-        ))}
-      </div>
+      <NavbarComponent />
+      <Routes>
+        <Route element={<TokensComponent />} path="/tokens" />
+        <Route element={<SearchComponent />} path="/search" />
+      </Routes>
     </div>
   )
 }
